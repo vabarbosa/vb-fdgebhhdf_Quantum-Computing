@@ -1,4 +1,4 @@
-# Quantum-Computing (some tests)
+# Quantum-Computing
 Toy models in Qiskit
 
 ## Grover's algorithm for $n$ qubits with unknown number of solutions
