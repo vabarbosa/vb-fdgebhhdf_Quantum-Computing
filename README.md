@@ -1,5 +1,5 @@
 # Quantum-Computing
-Toy models in Qiskit: Grover's algorithm with unknown number of solutions
+Toy models in Qiskit: Grover's algorithm with unknown number of solutions and arbitrary qubits
 
 ## Grover's algorithm for $n$ qubits with unknown number of solutions
 
