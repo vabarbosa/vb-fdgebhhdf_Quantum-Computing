@@ -43,7 +43,7 @@ diffuser = general_diffuser(n)
 
 # unknown number of solution
 m = 1
-lmbd = 6/5
+lmbd = 6/5 # 1 < lambda < 4/3
 solution = '0'*n # suppose there's an easy way to check solutions
 
 # on average the algorithm needs O(sqrt(n/a)) number of "oracle+diffuser" loop
