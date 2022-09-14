@@ -3,7 +3,7 @@ Toy models in Qiskit
 
 ## Grover's algorithm for $n$ qubits with unknown number of solutions
 
-This python programs finds outputs one solution (among an unknown number of solutions $a$).
+This python program finds one solution (among an unknown number of solutions $a$).
 Suppose there are $N=2^n$ possible states. Theoretical works[^1] show that the number of loops (oracle + diffuser) to find the solutions is $O(\sqrt(N/a))$.
 Here, as a ``toy model implementation", the program stops when 1 solution is found.
 
