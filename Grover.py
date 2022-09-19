@@ -27,7 +27,7 @@ def general_diffuser(nqubits):
     return qc
 
 # number of qubits
-n = 20
+n = 10
 
 # oracle, say 000...0 is the solution
 oracle = QuantumCircuit(n)
@@ -65,20 +65,15 @@ while True:
 
     # run simulations
     sim = Aer.get_backend('aer_simulator')
-    result = sim.run(grover).result().get_counts()
+    result = sim.run(grover, shots=1).result().get_counts() # only 1 shot
 
-    # detect a possible solution (easy to check, hard to find)
-    max_val = 0
-    for (key,value) in result.items():
-        if value/1024 > max_val:
-            max_val = value/1024
-            tmp_solution = key
+    potential_solution = list(result.items())[0][0]
 
-    if tmp_solution == solution:
-        print(f'found some solution: {tmp_solution}')
-        print(f'with frequency {max_val}')
+    if potential_solution == solution:
+        print(f'found some solution: {potential_solution}')
         print(f'in {count} loops')
+        print(f'on average, should be O({np.sqrt(2**n)})')
         break
 
-    m = lmbd*m
+    m = np.min([lmbd*m, np.sqrt(2**n)])
     print(count)
